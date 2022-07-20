@@ -21,7 +21,7 @@ public final class XPFly extends JavaPlugin {
         server = getServer();
 
         config.addDefault("cost", 1);
-        config.addDefault("interval", 3);
+        config.addDefault("interval", 2);
 
         config.options().copyDefaults(true);
 
