@@ -1,0 +1,35 @@
+name: XPFly
+version: ${project.version}
+main: cn.asone.xpfly.XPFly
+api-version: 1.19
+description: XPFly for 1.19
+commands:
+  xpflytoggle:
+    description: 开关经验飞行.
+    usage: /<command>
+    permission: xpflytoggle
+  xpflyreload:
+    description: 重新加载经验飞行配置.
+    usage: /<command>
+    permission: xpflyreload
+  xpflycost:
+    description: 每次消耗多少经验.
+    usage: /<command> <params>
+    permission: xpflyreload
+  xpflyinterval:
+    description: 多少时刻消耗一次经验.
+    usage: /<command> <params>
+    permission: xpflyreload
+permissions:
+  xpflytoggle:
+    description: 开关经验飞行
+    default: true
+  xpflyreload:
+    description: 重新加载经验飞行配置
+    default: op
+  xpflycost:
+    description: 每次消耗多少经验
+    default: op
+  xpflyinterval:
+    description: 多少时刻消耗一次经验
+    default: op
