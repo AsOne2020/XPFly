@@ -20,6 +20,10 @@ commands:
     description: 多少时刻消耗一次经验.
     usage: /<command> <params>
     permission: xpflyreload
+  xpflyfalldamage:
+    description: 开关经验飞行摔落伤害.
+    usage: /<command>
+    permission: xpflyfalldamage
 permissions:
   xpflytoggle:
     description: 开关经验飞行
@@ -32,4 +36,7 @@ permissions:
     default: op
   xpflyinterval:
     description: 多少时刻消耗一次经验
+    default: op
+  xpflyfalldamage:
+    description: 开关经验飞行摔落伤害.
     default: op

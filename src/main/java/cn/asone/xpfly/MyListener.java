@@ -21,6 +21,7 @@ public class MyListener implements Listener {
                         if (player.getTotalExperience() < cost) {
                             player.sendMessage("§c[§6XPFly§c] §c经验不足，已关闭飞行");
                             player.setAllowFlight(false);
+                            player.setFlying(false);
                             flyingState.put(uuid, false);
                         } else {
                             if (player.getAllowFlight()) {
@@ -33,6 +34,10 @@ public class MyListener implements Listener {
                                     if (flyingTicks.get(uuid) % interval == 0) {
                                         flyingTicks.put(uuid, 1);
                                         player.giveExp(-cost, false);
+                                    }
+                                } else {
+                                    if (fallDamage) {
+                                        player.setFlying(true);
                                     }
                                 }
                             } else {

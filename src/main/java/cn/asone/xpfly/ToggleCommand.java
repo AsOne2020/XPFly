@@ -19,7 +19,7 @@ public class ToggleCommand implements CommandExecutor {
             } else {
                 XPFly.flyingState.put(uuid, true);
             }
-            player.sendMessage(String.format("§c[§6XPFly§c] §6经验飞行已%s！", XPFly.flyingState.get(uuid) ? "§a开启" : "§c关闭"));
+            player.sendMessage(String.format("§c[§6XPFly§c] §6经验飞行已%s", XPFly.flyingState.get(uuid) ? "§a开启" : "§c关闭"));
         }
         return true;
     }
