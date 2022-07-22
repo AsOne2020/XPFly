@@ -5,6 +5,7 @@ import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerToggleFlightEvent;
 
 import java.util.UUID;
 
@@ -20,9 +21,9 @@ public class MyListener implements Listener {
                     if (flyingState.get(uuid)) {
                         if (player.getTotalExperience() < cost) {
                             player.sendMessage("§c[§6XPFly§c] §c经验不足，已关闭飞行");
+                            flyingState.put(uuid, false);
                             player.setAllowFlight(false);
                             player.setFlying(false);
-                            flyingState.put(uuid, false);
                         } else {
                             if (player.getAllowFlight()) {
                                 if (player.isFlying()) {
@@ -52,6 +53,14 @@ public class MyListener implements Listener {
                     }
                 }
             }
+        }
+    }
+
+    @EventHandler
+    public void onPlayerFly(PlayerToggleFlightEvent event) {
+        Player player = event.getPlayer();
+        if (!event.isFlying() && player.getAllowFlight() && player.getGameMode() == GameMode.SURVIVAL && flyingState.get(player.getUniqueId()) && fallDamage) {
+            event.setCancelled(true);
         }
     }
 }

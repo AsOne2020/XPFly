@@ -1,6 +1,7 @@
 name: XPFly
 version: ${project.version}
 main: cn.asone.xpfly.XPFly
+author: As_One
 api-version: 1.19
 description: XPFly for 1.19
 commands:
@@ -26,16 +27,16 @@ commands:
     permission: xpflyfalldamage
 permissions:
   xpflytoggle:
-    description: 开关经验飞行
+    description: 开关经验飞行.
     default: true
   xpflyreload:
-    description: 重新加载经验飞行配置
+    description: 重新加载经验飞行配置.
     default: op
   xpflycost:
-    description: 每次消耗多少经验
+    description: 每次消耗多少经验.
     default: op
   xpflyinterval:
-    description: 多少时刻消耗一次经验
+    description: 多少时刻消耗一次经验.
     default: op
   xpflyfalldamage:
     description: 开关经验飞行摔落伤害.
